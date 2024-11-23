@@ -47,7 +47,7 @@ To set up the course on your local machine, follow these steps:
     npm install
    ```
 
-For more knowledge on the backend with Javascript  
-Proceed to the express [GitHub repo](https://github.com/1am-programmer/ExpressJS)     
+For more knowledge on Backend programming with Javascript  
+Proceed to the [ExpressJS GitHub repo](https://github.com/1am-programmer/ExpressJS)     
 
 
