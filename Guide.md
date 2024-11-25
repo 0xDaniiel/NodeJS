@@ -5,3 +5,13 @@
 - Mostly used for developing server-side & Network apps/apis.
 - Used to take javascript out of the browser.
 - Fast and scalable.
+
+# What you can use Node js for?
+
+- Building APIs
+- Server side Rendering Applications
+- Microservices
+- CLI Tools
+- Bots
+- Web scraping
+- Web servers
