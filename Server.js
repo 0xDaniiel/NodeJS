@@ -22,13 +22,24 @@ const server = http.createServer((request, response) => {
 */
 
 //Short form
+/*
 const server = http.createServer((request, response) => {
   response.writeHead(300, { "Content-Type": "text/html" }); //Shorter method of writing the header and status codes
   response.end("<div> <h1> HTML HEADER TAG </h1></div>");
 });
+*/
+
+//Using request
+const server = http.createServer((request, response) => {
+  console.log(request.url); //Page url
+  console.log(request.method); //It is a Get request
+
+  response.writeHead(300, { "Content-Type": "text/html" }); //Shorter method of writing the header and status codes
+  response.end("<div> <h1> HTML HEADER TAG </h1></div>");
+}); //USING POSTMAN VS CODE EXTENSION
 
 //Now we have to listen on a port
-const port = 3000;
+const port = process.env.PORT;
 server.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });

@@ -43,3 +43,10 @@
 - Now to run the server we use `npm start`
 
 - Next we install nodemon package using `npm install nodemon` to keep the file running
+- In the package.json, rename node server.js to nodemon server.js
+- When you run npm start, nodemoin watches it, so we don't have to constantly restart our server
+
+**Running a file with .env**
+
+- Use a `--env-file=.env` flag in your package.json
+- use the PROCESS keyword {varies with programming languages}
