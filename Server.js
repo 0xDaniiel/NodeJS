@@ -34,3 +34,5 @@ server.listen(port, () => {
 });
 
 //Go to your browser and search http://localhost:3000/ {which is the port number} you'll find 'hello world'
+
+//We are now running server as script, check Guide.md

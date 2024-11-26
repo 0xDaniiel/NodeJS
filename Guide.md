@@ -34,4 +34,12 @@
 
 - Create server method is a http used to create a server
 - The `.write()` method writes some data to the stream, and calls the supplied callback once the data has been fully handled. If an error occurs, the callback will be called with the error as its first argument. The callback is called asynchronously and before 'error' is emitted.
--
+
+**To run our server as scripts**
+
+- Go to package.json
+- Rename test to - start
+- Rename its value to - node server.js
+- Now to run the server we use `npm start`
+
+- Next we install nodemon package using `npm install nodemon` to keep the file running
