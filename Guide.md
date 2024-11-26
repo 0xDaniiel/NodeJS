@@ -10,8 +10,15 @@
 
 - Building APIs
 - Server side Rendering Applications
+- Real time applications
 - Microservices
 - CLI Tools
 - Bots
 - Web scraping
 - Web servers
+
+# Get started
+
+- Create a package.json file
+- You can use npm init , then fill in all the details
+- Or just use `npm init -y` to skip
