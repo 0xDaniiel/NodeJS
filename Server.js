@@ -1,10 +1,9 @@
 //Creating a server
-//Remove comments to run codes seperately
+//Remove comments to Test each step
 import http from "http";
 
-//Test
-
 /*
+//step 1 - TO CREATE A SERVER 
 const server = http.createServer((request, response) => {
   response.write("Hello World"); //end the stream - ideally a framework will do this for you
   response.end();
@@ -12,8 +11,8 @@ const server = http.createServer((request, response) => {
 
 */
 
-//Using HTML
 /*
+//Step 2 - USING HTML
 const server = http.createServer((request, response) => {
   response.setHeader("Content-Type", "text/html"); // Means the content we are inputing is an html file
   response.statusCode = 300; //Here we can re-configure the status codes
@@ -21,27 +20,28 @@ const server = http.createServer((request, response) => {
 });
 */
 
-//Short form
 /*
+//Step 3 - USING A SHORT FORM
 const server = http.createServer((request, response) => {
   response.writeHead(300, { "Content-Type": "text/html" }); //Shorter method of writing the header and status codes
   response.end("<div> <h1> HTML HEADER TAG </h1></div>");
 });
 */
 
-//Using request
 /*
+//sTEP 4 - USING REQUEST
 const server = http.createServer((request, response) => {
   //console.log(request.url); //Page url
   //console.log(request.method); //It is a Get request
 
   response.writeHead(300, { "Content-Type": "text/html" }); //Shorter method of writing the header and status codes
   response.end(" <h1> HTML HEADER TAG </h1>");
-}); //USING POSTMAN VS CODE EXTENSION
-
+}); 
 */
 
-//A mini Router
+//USE POSTMAN VS CODE EXTENSION
+/**
+//Step 4 - cREATING A MINI ROUTER
 const server = http.createServer((request, response) => {
   if (request.url === "/") {
     response.writeHead(200, { "Content-Type": "text/html" });
@@ -53,6 +53,31 @@ const server = http.createServer((request, response) => {
     response.writeHead(404, { "Content-Type": "text/html" });
 
     response.end("<h1> Not Found</h1>");
+  }
+});
+ */
+
+// Step 5 - Using a TRY CATCH block to check if the HTTP method is a GET Request
+const server = http.createServer((request, response) => {
+  try {
+    if (request.method === "GET") {
+      if (request.url === "/") {
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.end("<h1> Homepage</h1>");
+      } else if (request.url === "/about") {
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.end("<h1> About Page </h1>");
+      } else {
+        response.writeHead(404, { "Content-Type": "text/html" });
+        response.end("<h1> Not Found</h1>");
+      }
+    } else {
+      throw new Error("Method not allowed");
+    }
+  } catch (error) {
+    response.writeHead(500, { "Content-Type": "text/html" });
+    response.end("Server Error");
+    //If the http method is not a get request, throw a 500 server error
   }
 });
 
