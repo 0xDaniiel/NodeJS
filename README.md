@@ -48,6 +48,9 @@ To set up the course on your local machine, follow these steps:
     npm install
    ```
 
-3. Read the Guide.md
-   For more knowledge on Backend programming with Javascript  
+3. Read the [Guide.md](https://github.com/1am-programmer/NodeJS/blob/main/Guide.md)
+
+
+
+For more knowledge on Backend programming with Javascript  
    Proceed to the [ExpressJS GitHub repo](https://github.com/1am-programmer/ExpressJS)
