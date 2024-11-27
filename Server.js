@@ -30,13 +30,31 @@ const server = http.createServer((request, response) => {
 */
 
 //Using request
+/*
 const server = http.createServer((request, response) => {
-  console.log(request.url); //Page url
-  console.log(request.method); //It is a Get request
+  //console.log(request.url); //Page url
+  //console.log(request.method); //It is a Get request
 
   response.writeHead(300, { "Content-Type": "text/html" }); //Shorter method of writing the header and status codes
-  response.end("<div> <h1> HTML HEADER TAG </h1></div>");
+  response.end(" <h1> HTML HEADER TAG </h1>");
 }); //USING POSTMAN VS CODE EXTENSION
+
+*/
+
+//A mini Router
+const server = http.createServer((request, response) => {
+  if (request.url === "/") {
+    response.writeHead(200, { "Content-Type": "text/html" });
+    response.end("<h1> Homepage</h1>");
+  } else if (request.url === "/about") {
+    response.writeHead(200, { "Content-Type": "text/html" });
+    response.end("<h1> About Page </h1>");
+  } else {
+    response.writeHead(404, { "Content-Type": "text/html" });
+
+    response.end("<h1> Not Found</h1>");
+  }
+});
 
 //Now we have to listen on a port
 const port = process.env.PORT;
