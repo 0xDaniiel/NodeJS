@@ -50,3 +50,12 @@
 
 - Use a `--env-file=.env` flag in your package.json
 - use the PROCESS keyword {varies with programming languages}
+
+**Middlewares**
+
+- They are modules or functions that have access to the request and response objects, they sit in between the incoming request and the outgoing response.
+
+- They are used to add functionality to the server.
+- They are used to modify the request and response objects.
+- They are used to add new properties to the request and response objects.
+- They are used to add new methods to the request and response objects.
