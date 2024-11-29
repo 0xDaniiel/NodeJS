@@ -19,3 +19,4 @@ console.log(os.version());
 // others- Refer to the documentation
 console.log(os.release());
 console.log(os.networkInterfaces());
+console.log(os.machine());
