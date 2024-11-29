@@ -15,6 +15,9 @@ console.log(path.extname(filePath)); //Returns .txt
 console.log(path.parse(filePath)); //Returns the path as an object
 
 //Join create a filepath based on argument passed on it [Because delimiters differs on OS]
-
 const filePath2 = path.join("users", "path");
 console.log(filePath2); //Returns users\path ** for windows
+
+//Resolve
+const filePath3 = path.resolve("users", "path");
+console.log(filePath3); //Returns an actual path, starting with your device path
