@@ -1,22 +1,50 @@
+/**
+ * osBasics.js
+ *
+ * Demonstrates how to use Node.js 'os' module to retrieve system information.
+ */
+
 import os from "os";
-//Gives you information about your system
 
-//userInfo()
-console.log(os.userInfo()); //Returns an object with your devuce: uid, gid, username , homedir and shell
+// ------------------------
+// 1. User Information
+// ------------------------
+console.log("👤 User Info:", os.userInfo());
+// Returns an object with:
+// uid, gid, username, homedir, shell
 
-//Total memory
-console.log(os.totalmem()); //Returns your device total memory in bytes
+// ------------------------
+// 2. Memory Information
+// ------------------------
+console.log("🧠 Total Memory (bytes):", os.totalmem());
+console.log("💾 Free Memory (bytes):", os.freemem());
 
-//Free memory
-console.log(os.freemem());
+// ------------------------
+// 3. CPU Information
+// ------------------------
+console.log("🖥️ CPU Info:", os.cpus());
+// Returns an array of objects — one per logical CPU core
 
-//CPU info
-console.log(os.cpus()); //Returns an array of objects for every cores in your device
+// ------------------------
+// 4. OS Version & Release
+// ------------------------
+console.log("🪟 OS Version:", os.version());
+console.log("🔓 OS Release:", os.release());
 
-//Windows version
-console.log(os.version());
+// ------------------------
+// 5. Network Interfaces
+// ------------------------
+console.log("🌐 Network Interfaces:", os.networkInterfaces());
+// Helpful for identifying IP addresses and adapters
 
-// others- Refer to the documentation
-console.log(os.release());
-console.log(os.networkInterfaces());
-console.log(os.machine());
+// ------------------------
+// 6. Machine Architecture
+// ------------------------
+console.log("🏗️ Machine Architecture:", os.machine());
+// Example: 'x64' or 'arm64'
+
+// ------------------------
+// Bonus: Platform and Hostname
+// ------------------------
+console.log("🧭 Platform:", os.platform());
+console.log("📛 Hostname:", os.hostname());

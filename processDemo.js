@@ -1,29 +1,51 @@
-//process is a global object we can access it withoput importing it
-console.log(process.argv); //If you run it with a flag eg   node processDemo.js -s it will add -s to the output
-console.log(process.argv[2]); //Since its an array we can access it with index
+/**
+ * processBasics.js
+ *
+ * Demonstrates usage of the Node.js global 'process' object:
+ * - Accessing CLI arguments
+ * - Reading environment variables
+ * - Getting process info like memory, uptime, etc.
+ * - Handling process exit
+ */
 
-//Using process.env system variable
-console.log(process.env.HOMEPATH);
+// ------------------------
+// 1. Command-Line Arguments
+// ------------------------
+// Access via process.argv (it's an array)
+console.log("🔧 Full Arguments:", process.argv);
+console.log("📌 Third Argument (index 2):", process.argv[2]);
+// Try running: node processBasics.js -s
 
-//Id of Node js process
-console.log(process.pid);
+// ------------------------
+// 2. Environment Variables
+// ------------------------
+console.log(
+  "🏠 User Home Path (HOMEPATH):",
+  process.env.HOMEPATH || "Not Available"
+);
+// Can also check custom variables like process.env.MY_VAR if set before execution
 
-//Current working directory
-console.log(process.cwd());
+// ------------------------
+// 3. Process Information
+// ------------------------
+console.log("🆔 Process ID (PID):", process.pid);
+console.log("📂 Current Working Directory:", process.cwd());
+console.log("📛 Process Title:", process.title);
+console.log("🧠 Memory Usage:", process.memoryUsage());
+console.log("⏱️ Uptime (seconds):", process.uptime());
 
-//Title
-console.log(process.title);
-
-//Memory usage
-console.log(process.memoryUsage());
-
-// Uptime for the process
-console.log(process.uptime());
-
+// ------------------------
+// 4. Handle Process Exit
+// ------------------------
 process.on("exit", (code) => {
-  console.log(`Exiting with code ${code}`);
-});//This action fires when the process is about to exit
+  console.log(`👋 Exiting with code: ${code}`);
+});
 
-//Exit
-console.log(process.exit(0));
-console.log("[Will not be printed]"); //Because it comes agter the exit
+// ------------------------
+// 5. Exit Process Manually
+// ------------------------
+console.log("✅ Exiting process...");
+process.exit(0); // Terminates the process (nothing below this line runs)
+
+// This will NOT run:
+console.log("[This line will not be printed]");

@@ -1,23 +1,38 @@
+/**
+ * pathBasics.js
+ *
+ * Demonstrates how to work with file and directory paths using Node.js 'path' module.
+ */
+
 import path from "path";
 
-const filePath = "./dir1/dir2/test.txt"; //demo
+// Example file path
+const filePath = "./dir1/dir2/test.txt";
 
-//basename
-console.log(path.basename(filePath)); //Returns test.txt
+// ------------------------
+// 1. Path Component Methods
+// ------------------------
 
-//directory name
-console.log(path.dirname(filePath)); //Returns ./dir1/dir2
+console.log("📄 Basename:", path.basename(filePath));
+// ➤ Returns the file name: "test.txt"
 
-//extension name
-console.log(path.extname(filePath)); //Returns .txt
+console.log("📁 Directory Name:", path.dirname(filePath));
+// ➤ Returns the directory path: "./dir1/dir2"
 
-//parse
-console.log(path.parse(filePath)); //Returns the path as an object
+console.log("📎 Extension Name:", path.extname(filePath));
+// ➤ Returns the file extension: ".txt"
 
-//Join create a filepath based on argument passed on it [Because delimiters differs on OS]
-const filePath2 = path.join("users", "path");
-console.log(filePath2); //Returns users\path ** for windows
+console.log("🧩 Parsed Path:", path.parse(filePath));
+// ➤ Returns an object: { root, dir, base, ext, name }
 
-//Resolve
-const filePath3 = path.resolve("users", "path");
-console.log(filePath3); //Returns an actual path, starting with your device path
+// ------------------------
+// 2. Creating/Combining Paths
+// ------------------------
+
+const joinedPath = path.join("users", "john", "documents");
+console.log("🛠️ Joined Path:", joinedPath);
+// ➤ Cross-platform-safe: "users/john/documents" or "users\john\documents" on Windows
+
+const resolvedPath = path.resolve("users", "john", "documents");
+console.log("📍 Resolved Path:", resolvedPath);
+// ➤ Returns absolute path from current working directory
